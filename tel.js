@@ -3,19 +3,18 @@
 //Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
 
 function createPhoneNumber(numbers) {
-  if (numbers.length > 10) {
-    console.log("za dużo cyfr!");
-    return null;
-  } else if (numbers.length < 10) {
-    console.log("za mało cyfr!");
-    return null;
-  } else {
+  if (numbers.length === 10) {
     const a = numbers.slice(0, 3).join("");
     const b = numbers.slice(3, 6).join("");
     const c = numbers.slice(6).join("");
-const numer="("+a+")"+" "+b+"-"+c;
+
+    const numer = "(" + a + ") " + b + "-" + c;
+
     console.log(numer);
     return numer;
+  } else {
+    console.log("wpisz 10 cyfr!");
+    return false;
   }
 }
 
